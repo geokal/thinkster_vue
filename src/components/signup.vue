@@ -1,52 +1,54 @@
 <template>
-  <FormulateForm class="login-form" v-model="formValues">
-    <h2 class="form-title">Register</h2>
-    <p>
-      You can place any elements you want inside a form. The inputs themselves
-      can even be deeply nested.
-    </p>
-    <FormulateInput
-      name="name"
-      type="text"
-      label="Your name"
-      placeholder="Your name"
-      validation="required"
-    />
-    <FormulateInput
-      name="email"
-      type="email"
-      label="Email address"
-      placeholder="Email address"
-      validation="required|email"
-    />
-    <div class="double-wide">
+  <div class="signup">
+    <FormulateForm class="login-form" v-model="formValues">
+      <h2 class="form-title">Register</h2>
+      <p>
+        You can place any elements you want inside a form. The inputs themselves
+        can even be deeply nested.
+      </p>
       <FormulateInput
-        name="password"
-        type="password"
-        label="Password"
-        placeholder="Your password"
+        name="name"
+        type="text"
+        label="Your name"
+        placeholder="Your name"
         validation="required"
       />
       <FormulateInput
-        name="password_confirm"
-        type="password"
-        label="Confirm your password"
-        placeholder="Confirm password"
-        validation="required|confirm"
-        validation-name="Confirmation"
+        name="email"
+        type="email"
+        label="Email address"
+        placeholder="Email address"
+        validation="required|email"
       />
+      <div class="double-wide">
+        <FormulateInput
+          name="password"
+          type="password"
+          label="Password"
+          placeholder="Your password"
+          validation="required"
+        />
+        <FormulateInput
+          name="password_confirm"
+          type="password"
+          label="Confirm your password"
+          placeholder="Confirm password"
+          validation="required|confirm"
+          validation-name="Confirmation"
+        />
 
-      <FormulateInput type="submit" label="Register"/>
-    </div>
+        <FormulateInput type="submit" label="Register"/>
+      </div>
 
-    <pre class="code" v-text="formValues"/>
-  </FormulateForm>
+      <pre class="code" v-text="formValues"/>
+    </FormulateForm>
+  </div>
 </template>
 
 
 <script>
 export default {
-  name: "signUp",
+  name: "signup",
   props: {
     formValues: {}
   }
